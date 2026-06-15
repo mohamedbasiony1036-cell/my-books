@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصرح الفخم للمؤلف | منصة نشر المؤلفات الدينية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- الهوية البصرية فائقة الفخامة (Ultra-Premium Royal) --- */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #1e3a8a 100%);
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --primary-color: #1e40af;       
+            --primary-dark: #0f172a;        
+            --secondary-color: #f97316;     
+            --accent-color: #d4af37;        
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --border-glass: rgba(214, 175, 55, 0.25);
+            --text-dark: #111827;
+            --text-muted: #4b5563;
+            
+            --shadow-premium: 0 20px 40px -15px rgba(30, 64, 175, 0.2);
+            --transition-royal: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #faf8f3;
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* نقوش هندسية ملكية ناعمة جداً في الخلفية */
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.03) 2px, transparent 0);
+            background-size: 40px 40px; z-index: -1; pointer-events: none;
+        }
+
+        /* --- شريط التنقل الزجاجي (Navbar) --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed; width: 100%; top: 0; left: 0; z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .nav-container {
+            max-width: 1400px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 40px;
+        }
+
+        .logo {
+            font-size: 26px; font-weight: 900; color: var(--primary-dark);
+            text-decoration: none; display: flex; align-items: center; gap: 12px;
+        }
+
+        .logo i {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 30px;
+        }
+
+        .logo span { color: var(--accent-color); }
+
+        .nav-menu { display: flex; list-style: none; gap: 45px; }
+        .nav-link {
+            text-decoration: none; color: var(--text-muted);
+            font-weight: 700; font-size: 16px; transition: var(--transition-royal);
+            position: relative; padding: 8px 0;
+        }
+
+        .nav-link:hover, .nav-link.active { color: var(--primary-color); }
+        .nav-link::after {
+            content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 3px;
+            background: var(--gold-gradient); transition: var(--transition-royal);
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* --- الأزرار الفاخرة --- */
+        .btn-gold-glow {
+            background: var(--primary-gradient); color: white;
+            padding: 14px 32px; border-radius: 12px; text-decoration: none;
+            font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 12px;
+            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.25);
+            border: 1px solid rgba(214, 175, 55, 0.3); transition: var(--transition-royal);
+        }
+
+        .btn-gold-glow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(30, 64, 175, 0.4), 0 0 15px rgba(212, 175, 55, 0.4);
+            border-color: #fff;
+        }
+
+        .btn-orange-premium {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #ea580c 100%);
+            color: white; padding: 14px 32px; border-radius: 12px; text-decoration: none;
+            font-weight: 700; display: inline-flex; align-items: center; gap: 12px;
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3); transition: var(--transition-royal);
+            border: none; cursor: pointer;
+        }
+
+        .btn-orange-premium:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(249, 115, 22, 0.5);
+        }
+
+        /* --- الواجهة الرئيسية (Hero Section) --- */
+        .hero {
+            padding: 220px 40px 140px 40px;
+            background: radial-gradient(circle at top right, #ffffff 0%, #f3ede0 100%);
+            border-bottom: 1px solid rgba(214,175,55,0.15);
+            display: flex; justify-content: center;
+        }
+
+        .hero-container {
+            max-width: 1300px; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .hero-text { width: 55%; }
+        .hero-graphics { width: 45%; display: flex; justify-content: flex-end; }
+
+        .hero-badge {
+            background: rgba(214, 175, 55, 0.08); color: #9a7300;
+            padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 800;
+            display: inline-flex; align-items: center; gap: 10px; margin-bottom: 30px;
+            border: 1px solid rgba(214, 175, 55, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 52px; color: var(--primary-dark); line-height: 1.3;
+            margin-bottom: 30px; font-weight: 900;
+        }
+
+        .hero h1 span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 19px; color: var(--text-muted); margin-bottom: 45px;
+            text-align: justify; max-width: 700px;
+        }
+
+        /* كتاب الـ 3D التفاعلي */
+        .book-3d-wrapper { perspective: 1200px; }
+        .book-3d {
+            width: 300px; height: 430px; position: relative;
+            transform-style: preserve-3d; transform: rotateY(-25deg) rotateX(15deg);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 15px 15px 35px rgba(0,0,0,0.18);
+        }
+
+        .book-3d-wrapper:hover .book-3d {
+            transform: rotateY(-5px) rotateX(5px) scale(1.05);
+            box-shadow: 25px 30px 50px rgba(30, 64, 175, 0.25);
+        }
+
+        .book-cover {
+            position: absolute; width: 100%; height: 100%;
+            background: var(--primary-gradient); border-radius: 4px 16px 16px 4px;
+            padding: 50px 30px; color: white; display: flex; flex-direction: column;
+            justify-content: space-between; border-left: 8px solid var(--accent-color);
+        }
+
+        .book-title-hero {
+            font-size: 26px; color: var(--accent-color); font-weight: 900;
+            text-align: center; line-height: 1.5; padding-bottom: 25px;
+            border-bottom: 1px solid rgba(214,175,55,0.2);
+        }
+
+        /* --- شريط العدادات --- */
+        .stats-bar { background: white; padding: 40px 0; border-bottom: 1px solid var(--border-glass); }
+        .stats-container {
+            max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-around; text-align: center;
+        }
+        .stat-item i { font-size: 38px; color: var(--accent-color); margin-bottom: 12px; }
+        .stat-num { font-size: 36px; font-weight: 900; color: var(--primary-color); }
+        .stat-lbl { font-size: 15px; color: var(--text-muted); font-weight: 700; }
+
+        /* --- العناوين الرئيسية --- */
+        .section-title { text-align: center; margin: 120px auto 60px auto; padding: 0 20px; }
+        .section-title h2 {
+            font-size: 38px; color: var(--primary-dark); font-weight: 900; margin-bottom: 15px;
+            position: relative; display: inline-block; padding-bottom: 25px;
+        }
+        .section-title h2::after {
+            content: "⚜️"; position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
+            background: #faf8f3; padding: 0 20px; color: var(--accent-color); font-size: 22px;
+        }
+        .section-title h2::before {
+            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        /* --- شبكة الكتب المحسنة والمضمونة --- */
+        .library-section { max-width: 1400px; margin: 0 auto 120px auto; padding: 0 40px; }
+        
+        .books-wrapper-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* رسالة الرف الفارغ */
+        .empty-shelf-message {
+            width: 100%; text-align: center; padding: 80px 40px;
+            background: var(--bg-glass); border-radius: 20px;
+            border: 2px dashed rgba(214, 175, 55, 0.4); box-shadow: var(--shadow-premium);
+            display: block;
+        }
+        .empty-shelf-message i { font-size: 60px; color: var(--accent-color); margin-bottom: 20px; }
+        .empty-shelf-message h3 { font-size: 24px; color: var(--primary-dark); margin-bottom: 10px; font-weight: 800; }
+        .empty-shelf-message p { color: var(--text-muted); font-size: 16px; }
+
+        /* كروت الكتب المضافة */
+        .premium-book-card {
+            background: white; border-radius: 20px; 
+            width: calc(33.333% - 20px); /* يضمن ظهور 3 كتب في الصف بالتساوي */
+            min-width: 300px;
+            box-shadow: var(--shadow-premium); border: 1px solid rgba(214,175,55,0.12);
+            overflow: hidden; transition: var(--transition-royal);
+            display: flex;
+            flex-direction: column;
+        }
+        .premium-book-card:hover {
+            transform: translateY(-12px); box-shadow: 0 30px 50px -10px rgba(30, 64, 175, 0.25);
+            border-color: rgba(214,175,55,0.4);
+        }
+        .card-visuals {
+            background: var(--primary-gradient); padding: 60px 20px; text-align: center;
+            position: relative; border-bottom: 5px solid var(--accent-color);
+        }
+        .card-visuals i { font-size: 85px; color: var(--accent-color); text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .card-info { padding: 35px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-category { color: var(--accent-color); font-size: 13px; font-weight: 800; display: block; margin-bottom: 10px; }
+        .card-title-text { font-size: 24px; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
+        .card-desc-text { color: var(--text-muted); font-size: 15px; margin-bottom: 30px; text-align: justify; }
+        .card-meta-bar { border-top: 1px solid #f3f4f6; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .card-price { font-size: 22px; font-weight: 900; color: var(--primary-color); }
+
+        /* --- لوحة التحكم --- */
+        .admin-section { background: linear-gradient(135deg, #0b0f19 0%, #172554 100%); padding: 120px 40px; color: white; }
+        .admin-glass-box {
+            max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 28px; border: 1px solid rgba(214, 175, 55, 0.3); padding: 60px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+        .admin-glass-box h2 { text-align: center; color: var(--accent-color); font-size: 36px; font-weight: 900; margin-bottom: 15px; }
+        .admin-glass-box p { text-align: center; color: #cbd5e1; margin-bottom: 45px; }
+        
+        .form-row { display: flex; gap: 30px; margin-bottom: 25px; }
+        .form-col { flex: 1; display: flex; flex-direction: column; }
+        .form-col label { margin-bottom: 12px; font-weight: 700; font-size: 15px; color: #f3f4f6; }
+        .form-col input, .form-col select, .form-col textarea {
+            width: 100%; padding: 16px 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.95); color: #0f172a; font-size: 16px; font-weight: 600; outline: none;
+        }
+        .form-col input:focus, .form-col select:focus, .form-col textarea:focus {
+            border-color: var(--accent-color); box-shadow: 0 0 0 4px rgba(214, 175, 55, 0.4);
+        }
+        .btn-submit-royal { width: 100%; padding: 18px; font-size: 18px; font-weight: 900; margin-top: 20px; border-radius: 10px; }
+
+        /* --- التذييل --- */
+        footer { background: #070a13; color: #9ca3af; padding: 70px 40px 40px 40px; border-top: 4px solid var(--accent-color); text-align: center; }
+        footer p span { color: var(--accent-color); font-weight: 800; }
+
+        /* بوب أب الإشعارات */
+        .toast-premium {
+            position: fixed; bottom: 40px; left: 40px; background: #10b981; color: white;
+            padding: 18px 36px; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            display: none; z-index: 3000; font-weight: 700; align-items: center; gap: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toastPremium" class="toast-premium">
+        <i class="fas fa-check-circle" style="font-size: 24px;"></i> <span id="toastText">تمت العملية بنجاح!</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fas fa-book-quran"></i> صرح <span>المعرفة</span></a>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">الرئيسية</a></li>
+                <li><a href="#library-shelf" class="nav-link">المكتبة الحية</a></li>
+                <li><a href="#admin-panel" class="nav-link">لوحة التحكم الفوري</a></li>
+            </ul>
+            <a href="#admin-panel" class="btn-gold-glow"><i class="fas fa-feather-alt"></i> لوحة الإدارة</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="hero-badge"><i class="fas fa-scroll"></i> المنصة الرسمية المستقلة للمؤلف</div>
+                <h1>واحة الفكر الإسلامي.. <br>اقرأ أحدث <span>مؤلفاتي الشرعية</span></h1>
+                <p>مرحباً بكم في منصتي الرقمية الخاصة. هنا أنشر حصاد سنين طويلة من البحث والتدقيق في العلوم الدينية والفقه التشريعي وسير الأعلام، مصاغة بلغة عربية فصحى بليغة، ومتاحة للتحميل الفوري والمباشر دون أي وسيط.</p>
+                <div class="hero-buttons">
+                    <a href="#library-shelf" class="btn-orange-premium"><i class="fas fa-book-open"></i> دخول المكتبة</a>
+                </div>
+            </div>
+            <div class="hero-graphics">
+                <div class="book-3d-wrapper">
+                    <div class="book-3d">
+                        <div class="book-cover">
+                            <i class="fas fa-mosque" style="font-size:40px; color:var(--accent-color); text-align:center;"></i>
+                            <div class="book-title-hero" id="heroBookTitle">بانتظار كتابك الأول</div>
+                            <div style="text-align: center; font-size: 14px; color: #cbd5e1;">مؤلفات فضيلة الشيخ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <i class="fas fa-layer-group"></i>
+                <div class="stat-num" id="bookCounter">0</div>
+                <div class="stat-lbl">الكتب المنشورة حالياً</div>
+            </div>
+            <div class="stat-item"><i class="fas fa-cloud-arrow-down"></i><div class="stat-num">فوري</div><div class="stat-lbl">تحميل مباشر أونلاين</div></div>
+            <div class="stat-item"><i class="fas fa-shield-halved"></i><div class="stat-num">100%</div><div class="stat-lbl">ملكية فكرية وحصرية</div></div>
+        </div>
+    </section>
+
+    <section id="library-shelf">
+        <div class="section-title">
+            <h2>خزانة المؤلف الفاخرة</h2>
+        </div>
+
+        <div class="library-section">
+            <div class="books-wrapper-grid" id="booksShelfContainer">
+                
+                <div class="empty-shelf-message" id="emptyMessage">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>المكتبة بانتظار خَطِّ قلمك الشريف...</h3>
+                    <p>انزل إلى "لوحة التحكم الفوري" أسفل الموقع، وادخل بيانات كتابك الأول لتراه يظهر هنا فوراً بأعلى درجات التنسيق والفخامة الملكية!</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="admin-panel" class="admin-section">
+        <div class="admin-glass-box">
+            <h2><i class="fas fa-feather"></i> منصة تأليف ونشر الكتب الفورية</h2>
+            <p>خاص بك أنت فقط: كلما ألفت كتاباً جديداً، أدخل بياناته هنا بلغة فصحى ليرزق موقعك بإنتاجه فوراً أمام زوارك!</p>
+            
+            <form id="ultraBookForm" onsubmit="publishBookUltraPremium(event)">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="titleInput"><i class="fas fa-bookmark"></i> عنوان الكتاب الجديد</label>
+                        <input type="text" id="titleInput" required placeholder="مثال: أنوار التنزيل في فقه الدليل">
+                    </div>
+                    <div class="form-col">
+                        <label for="catInput"><i class="fas fa-tags"></i> تصنيف الكتاب الديني</label>
+                        <select id="catInput" required>
+                            <option value="السيرة النبوية">السيرة النبوية</option>
+                            <option value="علوم الحديث الشريف">علوم الحديث الشريف</option>
+                            <option value="التفسير وعلوم القرآن">التفسير وعلوم القرآن</option>
+                            <option value="الفقه والتشريع الإسلامي">الفقه والتشريع الإسلامي</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="priceInput"><i class="fas fa-coins"></i> السعر المقترح (أو اكتب مجاني)</label>
+                        <input type="text" id="priceInput" required placeholder="مثال: 45 ريال أو مجاني">
+                    </div>
+                    <div class="form-col">
+                        <label for="iconInput"><i class="fas fa-paint-brush"></i> الرمز البصري للغلاف</label>
+                        <select id="iconInput" required>
+                            <option value="fa-scroll">📜 مخطوطة ووثيقة أثرية</option>
+                            <option value="fa-book-open">📖 كتاب مفتوح كلاسيكي</option>
+                            <option value="fa-mosque">🕌 صرح ومئذنة مسجد</option>
+                            <option value="fa-star-and-crescent">🌙 هلال التزكية الإيمانية</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="descInput"><i class="fas fa-pen-nib"></i> نبذة بليغة عن مقاصد الكتاب بالفصحى</label>
+                        <textarea id="descInput" rows="4" required placeholder="اكتب وصفاً مختصراً وجذاباً يجذب المحققين والقرّاء لتحميل وقراءة إصدارك الجديد..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn-orange-premium btn-submit-royal"><i class="fas fa-upload"></i> انـشـر الـكـتـاب فـوراً فـي الـمـوقـع</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © لفضيلة المؤلف الشريف | تم البناء بـ <span>فخامة وتنسيق فائق</span></p>
+    </footer>
+
+    <script>
+        let booksCount = 0;
+
+        function publishBookUltraPremium(event) {
+            event.preventDefault();
+
+            // سحب القيم المدخلة
+            const title = document.getElementById('titleInput').value;
+            const category = document.getElementById('catInput').value;
+            const price = document.getElementById('priceInput').value;
+            const icon = document.getElementById('iconInput').value;
+            const desc = document.getElementById('descInput').value;
+
+            // تحديث الغلاف السحري في واجهة الهيرو بأحدث كتاب
+            document.getElementById('heroBookTitle').innerText = title;
+
+            const shelf = document.getElementById('booksShelfContainer');
+            const emptyMsg = document.getElementById('emptyMessage');
+
+            // إخفاء رسالة الرف الفارغ فوراً
+            if (emptyMsg) {
+                emptyMsg.style.display = 'none';
+            }
+
+            // بناء كارت الكتاب بنظام الشريحة المرنة المضمونة للمتصفحات
+            const card = document.createElement('div');
+            card.className = 'premium-book-card';
+            
+            card.innerHTML = `
+                <div class="card-visuals">
+                    <i class="fas ${icon}"></i>
+                </div>
+                <div class="card-info">
+                    <div>
+                        <span class="card-category"><i class="fas fa-tag"></i> ${category}</span>
+                        <h3 class="card-title-text">${title}</h3>
+                        <p class="card-desc-text">${desc}</p>
+                    </div>
+                    <div class="card-meta-bar">
+                        <div class="card-price">${price}</div>
+                        <a href="#" class="btn-orange-premium" style="padding:8px 18px; font-size:14px;" onclick="event.preventDefault(); alert('جاري بدء تحميل كتاب: ${title}')">تحميل الآن</a>
+                    </div>
+                </div>
+            `;
+
+            // إدراج الكتاب في مقدمة الرفوف
+            shelf.insertBefore(card, shelf.firstChild);
+
+            // تحديث ورفع عداد الكتب المنشورة آلياً
+            booksCount++;
+            document.getElementById('bookCounter').innerText = booksCount;
+
+            // تصفير حقول الاستمارة
+            document.getElementById('ultraBookForm').reset();
+
+            // إطلاق بوب أب النجاح المشرق الأخضر
+            const toast = document.getElementById('toastPremium');
+            document.getElementById('toastText').innerText = "الحمد لله، تم نشر وتنسيق كتابك الجديد (" + title + ") بنجاح فائق!";
+            toast.style.display = 'inline-flex';
+            setTimeout(() => { toast.style.display = 'none'; }, 5000);
+
+            // الصعود التلقائي المريح للعين لمشاهدة الكتاب على الرف
+            document.getElementById('library-shelf').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
